@@ -1,12 +1,12 @@
 import { env } from './config/env.js';
+import { getScaledTotalRecordCount } from './config/recordCounts.js';
 import { createApp } from './app.js';
-import { TOTAL_RECORD_COUNT } from '@mde/shared';
 
 import { getDataStore, getRecordCounts } from './services/dataStore.js';
 
 const app = createApp();
 
-console.log(`Initializing data store (${TOTAL_RECORD_COUNT.toLocaleString()} records)...`);
+console.log(`Initializing data store (${getScaledTotalRecordCount().toLocaleString()} records)...`);
 getDataStore();
 const counts = getRecordCounts();
 console.log(

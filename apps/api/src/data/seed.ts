@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
 import type { Order, Transaction, User } from '@mde/shared';
-import { RECORD_COUNTS } from '@mde/shared';
+
+import { getScaledRecordCounts } from '../config/recordCounts.js';
 
 faker.seed(42);
 
@@ -83,14 +84,17 @@ function generateTransactions(count: number, orderIds: string[], userIds: string
 }
 
 export function createSeedData() {
-  console.log('Generating seed data...');
+  const counts = getScaledRecordCounts();
+  console.log(
+    `Generating seed data (scale ${process.env.RECORD_COUNT_SCALE ?? '1'} → ${counts.users + counts.orders + counts.transactions} records)...`,
+  );
   const start = Date.now();
 
-  const users = generateUsers(RECORD_COUNTS.users);
+  const users = generateUsers(counts.users);
   const userIds = users.map((u) => u.id);
-  const orders = generateOrders(RECORD_COUNTS.orders, userIds);
+  const orders = generateOrders(counts.orders, userIds);
   const orderIds = orders.map((o) => o.id);
-  const transactions = generateTransactions(RECORD_COUNTS.transactions, orderIds, userIds);
+  const transactions = generateTransactions(counts.transactions, orderIds, userIds);
 
   console.log(
     `Generated ${users.length + orders.length + transactions.length} records in ${Date.now() - start}ms`,
