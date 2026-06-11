@@ -1,0 +1,21 @@
+---
+import { ClientApp } from '@/app/ClientApp';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Massive Dataset Explorer — 10 lakh in-memory records with virtualization, RTK Query, and live optimization toggles." />
+    <meta property="og:title" content="Massive Dataset Explorer" />
+    <meta property="og:description" content="Explore 10 lakh records. Toggle optimizations and watch the effect live." />
+    <meta property="og:type" content="website" />
+    <title>Massive Dataset Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <ClientApp client:only="react" />
+  </body>
+</html>

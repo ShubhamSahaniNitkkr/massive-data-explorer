@@ -1,0 +1,23 @@
+{
+  "name": "massive-dataset-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enterprise-scale data exploration platform",
+  "scripts": {
+    "setup": "npx pnpm@9.15.4 install",
+    "dev": "concurrently -n api,web -c blue,green \"npx pnpm@9.15.4 --filter @mde/api dev\" \"npx pnpm@9.15.4 --filter @mde/web dev\"",
+    "build": "npx pnpm@9.15.4 --filter @mde/shared build && npx pnpm@9.15.4 --filter @mde/api build && npx pnpm@9.15.4 --filter @mde/web build",
+    "test": "npx pnpm@9.15.4 --filter @mde/shared test && npx pnpm@9.15.4 --filter @mde/api test && npx pnpm@9.15.4 --filter @mde/web test",
+    "test:e2e": "npx pnpm@9.15.4 --filter @mde/web test:e2e",
+    "lint": "npx pnpm@9.15.4 -r lint",
+    "typecheck": "npx pnpm@9.15.4 -r typecheck"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@9.15.4"
+}
