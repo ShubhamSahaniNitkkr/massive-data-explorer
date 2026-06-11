@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { parseSortParam, serializeSortParam } from './query.schema.js';
+import { parseSortParam, serializeSortParam } from '../src/schemas/query.schema.js';
 
 describe('parseSortParam', () => {
   it('parses single column sort', () => {

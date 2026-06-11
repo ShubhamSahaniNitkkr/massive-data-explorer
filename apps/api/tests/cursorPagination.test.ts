@@ -1,7 +1,7 @@
 import type { User } from '@mde/shared';
 import { describe, expect, it } from 'vitest';
 
-import { decodeCursor, encodeCursor, paginateRecords } from './cursorPagination.js';
+import { decodeCursor, encodeCursor, paginateRecords } from '../src/services/cursorPagination.js';
 
 const mockRecords: User[] = Array.from({ length: 100 }, (_, i) => ({
   id: `usr_${String(i).padStart(4, '0')}`,
