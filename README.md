@@ -2,6 +2,8 @@
 
 > A production-quality full-stack demo that explores **10 lakh (1,000,000) in-memory records** with **live React optimization toggles** — built for senior engineers who want to *see* why each pattern matters.
 
+<img width="2227" height="1165" alt="image" src="https://github.com/user-attachments/assets/cc783cd4-8b66-45d1-8be6-0409a2f1f0ef" />
+
 ---
 
 ## Purpose
